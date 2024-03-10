@@ -10,15 +10,15 @@ import {
 } from "react-native";
 
 function GoalInput(props) {
-  const [enteredGoleText, setEnterGoleText] = useState("");
+  const [enteredGoalText, setEnterGoalText] = useState("");
 
-  function goleInputHandler(enteredText) {
-    setEnterGoleText(enteredText);
+  function goalInputHandler(enteredText) {
+    setEnterGoalText(enteredText);
   }
 
-  function addGoleHandler() {
-    props.onAddGoal(enteredGoleText);
-    setEnterGoleText("");
+  function addGoalHandler() {
+    props.onAddGoal(enteredGoalText);
+    setEnterGoalText("");
   }
 
   return (
@@ -30,15 +30,15 @@ function GoalInput(props) {
         />
         <TextInput
           style={styles.textInput}
-          onChangeText={goleInputHandler}
-          value={enteredGoleText}
+          onChangeText={goalInputHandler}
+          value={enteredGoalText}
           placeholder="your course Goles"
         />
         <View style={styles.textInputButton}>
           <View style={styles.button}>
             <Button
-              title="Add gole"
-              onPress={addGoleHandler}
+              title="Add goal"
+              onPress={addGoalHandler}
               color={"#5e0acc"}
             />
           </View>
@@ -69,9 +69,12 @@ const styles = StyleSheet.create({
   },
   textInput: {
     borderWidth: 1,
-    borderColor: "#cccccc",
+    borderColor: "#e4d0ff",
+    backgroundColor: "#e4d0ff",
+    color: "#120438",
     width: "100%",
-    padding: 8,
+    padding: 16,
+    borderRadius: 6,
   },
   textInputButton: {
     flexDirection: "row",
