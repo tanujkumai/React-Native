@@ -8,10 +8,10 @@ export default function App() {
       <ImageBackground
         source={require("./assets/Images/background.png")}
         resizeMode="cover"
-        style={styles.rootScreen}
-        imageStyle={styles.backgroundImage}
+        style={styles.backgroundImage}
+        imageStyle={{ opacity: 0.15 }}
       >
-      <StartGameScreen />
+        <StartGameScreen />
       </ImageBackground>
     </LinearGradient>
   );
@@ -20,9 +20,11 @@ export default function App() {
 const styles = StyleSheet.create({
   rootScreen: {
     flex: 1,
-    backgroundColor: "#ddb52f",
   },
   backgroundImage: {
-    opacity: 0.15,
+    flex: 1,
+    position: "absolute",
+    width: "100%",
+    height: "100%",
   },
 });
