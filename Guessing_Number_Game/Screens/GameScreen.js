@@ -29,7 +29,7 @@ function GameScreen({ userNumber, onGameOver }) {
 
   useEffect(() => {
     if (currentGuess === userNumber) {
-      onGameOver();
+      onGameOver(guessRounds.length);
     }
   }, [currentGuess, userNumber, onGameOver]);
 
@@ -82,7 +82,9 @@ function GameScreen({ userNumber, onGameOver }) {
             </PrimaryButton>
           </View>
           <View style={styles.buttonContainer}>
-            <PrimaryButton buttonPressed={nextGuessHandler.bind(this, "greater")}>
+            <PrimaryButton
+              buttonPressed={nextGuessHandler.bind(this, "greater")}
+            >
               <Ionicons name="add" size={24} color="white" />
             </PrimaryButton>
           </View>
