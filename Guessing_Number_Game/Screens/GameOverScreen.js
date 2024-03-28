@@ -12,7 +12,6 @@ function GameOverScreen({ roundsNumber, userNumber, onStartNewGame }) {
           source={require("../assets/Images/success.png")}
         />
       </View>
-
       <Text style={styles.summaryText}>
         Your Phone needed{" "}
         <Text style={styles.highlightedText}>{roundsNumber}</Text> rounds to
