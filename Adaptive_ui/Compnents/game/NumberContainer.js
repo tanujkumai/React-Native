@@ -1,7 +1,5 @@
-import { View, Text, StyleSheet } from 'react-native';
-
-import Colors from '../../constants/colors';
-
+import { Text, View, StyleSheet } from "react-native";
+import Colors from "../../constants/Color";
 function NumberContainer({ children }) {
   return (
     <View style={styles.container}>
@@ -14,18 +12,18 @@ export default NumberContainer;
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 4,
+    borderWidth: 2,
     borderColor: Colors.accent500,
+    borderRadius: 8,
     padding: 24,
     margin: 24,
-    borderRadius: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   numberText: {
     color: Colors.accent500,
-    fontSize: 36,
-    // fontWeight: 'bold',
-    fontFamily: 'open-sans-bold'
+    fontSize: 34,
+    // fontWeight: "bold",
+    fontFamily: "open-sans-bold",
   },
 });

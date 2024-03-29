@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
-import { View, StyleSheet, Alert, Text, FlatList } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { useState, useEffect } from "react";
+import { View, StyleSheet, Alert, Text, FlatList } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
-import NumberContainer from '../components/game/NumberContainer';
-import Card from '../components/ui/Card';
-import InstructionText from '../components/ui/InstructionText';
-import PrimaryButton from '../components/ui/PrimaryButton';
-import Title from '../components/ui/Title';
-import GuessLogItem from '../components/game/GuessLogItem';
+import NumberContainer from "../Compnents/game/NumberContainer";
+import Card from "../Compnents/ui/Card";
+import InstructionText from "../Compnents/ui/InstructionText";
+import PrimaryButton from "../Compnents/ui/PrimaryButton";
+import Title from "../Compnents/ui/Title";
+import GuessLogItem from "../Compnents/game/GuessLogItem";
 
 function generateRandomBetween(min, max, exclude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -41,16 +41,16 @@ function GameScreen({ userNumber, onGameOver }) {
   function nextGuessHandler(direction) {
     // direction => 'lower', 'greater'
     if (
-      (direction === 'lower' && currentGuess < userNumber) ||
-      (direction === 'greater' && currentGuess > userNumber)
+      (direction === "lower" && currentGuess < userNumber) ||
+      (direction === "greater" && currentGuess > userNumber)
     ) {
-      Alert.alert("Don't lie!", 'You know that this is wrong...', [
-        { text: 'Sorry!', style: 'cancel' },
+      Alert.alert("Don't lie!", "You know that this is wrong...", [
+        { text: "Sorry!", style: "cancel" },
       ]);
       return;
     }
 
-    if (direction === 'lower') {
+    if (direction === "lower") {
       maxBoundary = currentGuess;
     } else {
       minBoundary = currentGuess + 1;
@@ -77,13 +77,15 @@ function GameScreen({ userNumber, onGameOver }) {
         </InstructionText>
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={nextGuessHandler.bind(this, 'lower')}>
-              <Ionicons name="md-remove" size={24} color="white" />
+            <PrimaryButton buttonPressed={nextGuessHandler.bind(this, "lower")}>
+              <Ionicons name="remove" size={24} color="white" />
             </PrimaryButton>
           </View>
           <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={nextGuessHandler.bind(this, 'greater')}>
-              <Ionicons name="md-add" size={24} color="white" />
+            <PrimaryButton
+              buttonPressed={nextGuessHandler.bind(this, "greater")}
+            >
+              <Ionicons name="add" size={24} color="white" />
             </PrimaryButton>
           </View>
         </View>
@@ -116,7 +118,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   buttonsContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
   },
   buttonContainer: {
     flex: 1,
