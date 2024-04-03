@@ -6,6 +6,7 @@ import GameScreen from "./Screens/GameScreen";
 import GameOverScreen from "./Screens/GameOverScreen";
 import Colors from "./constants/Color";
 import { useFonts } from "expo-font";
+import { StatusBar } from "expo-status-bar";
 
 import * as SplashScreen from "expo-splash-screen";
 
@@ -71,19 +72,22 @@ export default function App() {
   }
 
   return (
-    <LinearGradient
-      colors={[Colors.primary700, Colors.accent500]}
-      style={styles.rootScreen}
-    >
-      <ImageBackground
-        source={require("./assets/Images/background.png")}
-        resizeMode="cover"
-        style={styles.backgroundImage}
-        imageStyle={{ opacity: 0.15 }}
+    <>
+      <StatusBar style="light" />
+      <LinearGradient
+        colors={[Colors.primary700, Colors.accent500]}
+        style={styles.rootScreen}
       >
-        <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
-      </ImageBackground>
-    </LinearGradient>
+        <ImageBackground
+          source={require("./assets/Images/background.png")}
+          resizeMode="cover"
+          style={styles.backgroundImage}
+          imageStyle={{ opacity: 0.15 }}
+        >
+          <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
+        </ImageBackground>
+      </LinearGradient>
+    </>
   );
 }
 
