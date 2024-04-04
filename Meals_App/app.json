@@ -4,6 +4,7 @@
     "slug": "Meals_App",
     "version": "1.0.0",
     "orientation": "portrait",
+    "backgroundColor": "#24180f",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
@@ -25,6 +26,10 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-font"
+    ],
+    "fonts" : ["node_modules/@expo-google-fonts/inter/Inter_100Thin.ttf"]
   }
 }
