@@ -1,19 +1,28 @@
-import { View, FlatList, StyleSheet } from "react-native";
-import { useRoute } from "@react-navigation/native";
+import { View, FlatList, StyleSheet } from 'react-native';
 
-import { MEALS } from "../data/dummy-data";
-import MealItem from "../components/MealItem";
+import MealItem from '../components/MealItem';
+import { MEALS } from '../data/dummy-data';
 
-function MealsOverviewScreen(/* route */) {
-  const route = useRoute();
+function MealsOverviewScreen({ route }) {
   const catId = route.params.categoryId;
-  //   const catId = route.params.categoryId;
+
   const displayedMeals = MEALS.filter((mealItem) => {
     return mealItem.categoryIds.indexOf(catId) >= 0;
   });
 
   function renderMealItem(itemData) {
-    return <MealItem title={itemData.item.title} />;
+    const item = itemData.item;
+
+    const mealItemProps = {
+      title: item.title,
+      imageUrl: item.imageUrl,
+      affordability: item.affordability,
+      complexity: item.complexity,
+      duration: item.duration
+    };
+    return (
+      <MealItem {...mealItemProps} />
+    );
   }
 
   return (
