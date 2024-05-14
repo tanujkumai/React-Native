@@ -6,7 +6,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import CategoriesScreens from "./screens/CategoriesScreen";
 import FavoritesScreen from "./screens/FavoritesScreen";
 import MealsOverviewScreen from "./screens/MealsOverviewScreen";
-import MealDetailsScreen from "./screens/MealDetailsScreen";
+import MealDetailsScreen from "./screens/MealDetailScreen";
 import { Feather } from "@expo/vector-icons";
 
 const stack = createNativeStackNavigator();
