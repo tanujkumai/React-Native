@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet } from "react-native";
+import { Button, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
@@ -8,6 +8,7 @@ import FavoritesScreen from "./screens/FavoritesScreen";
 import MealsOverviewScreen from "./screens/MealsOverviewScreen";
 import MealDetailsScreen from "./screens/MealDetailScreen";
 import { Feather } from "@expo/vector-icons";
+
 
 const stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -81,7 +82,12 @@ export default function App() {
           <stack.Screen
             name="MealDetail"
             component={MealDetailsScreen}
-            options={{ title: "About the Meal" }}
+            options={
+              ({ title: "About the Meal" },
+              {
+                headerRight: () => <Button title="tap me" color={"#1E90FF"} />,
+              })
+            }
           />
         </stack.Navigator>
       </NavigationContainer>
