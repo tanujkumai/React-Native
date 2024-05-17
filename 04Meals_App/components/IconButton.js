@@ -6,7 +6,7 @@ function IconButton({ onTap, icon, color }) {
       <Pressable
         onPress={onTap}
         android_ripple={{ color: "#ccc" }}
-        style={(pressed) => pressed && styles.pressed}
+        style={({pressed}) => pressed && styles.pressed}
       >
         <Ionicons name={icon} size={20} color={color} />
       </Pressable>
