@@ -1,6 +1,7 @@
-import { useLayoutEffect } from "react";
-import { MEALS, CATEGORIES } from "../data/dummy-data";
-import MealsList from "../components/MealsList/MealsList";
+import { useLayoutEffect } from 'react';
+
+import MealsList from '../components/MealsList/MealsList';
+import { MEALS, CATEGORIES } from '../data/dummy-data';
 
 function MealsOverviewScreen({ route, navigation }) {
   const catId = route.params.categoryId;
@@ -17,8 +18,9 @@ function MealsOverviewScreen({ route, navigation }) {
     navigation.setOptions({
       title: categoryTitle,
     });
-  }, [catId, navigator]);
-  return <MealsList item={displayedMeals} />;
+  }, [catId, navigation]);
+
+  return <MealsList items={displayedMeals} />;
 }
 
 export default MealsOverviewScreen;
