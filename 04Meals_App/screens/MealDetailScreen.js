@@ -23,20 +23,20 @@ function MealDetailScreen({ route, navigation }) {
     return console.log("Pressed!");
   }
 
-  // useLayoutEffect(() => {
-  //   navigation.setOptions({
-  //     headerRight: () => {
-  //       return (
-  //         <IconButton
-  //           icon="star"
-  //           color="white"
-  //           onPress={headerButtonPressHandler}
-  //         />
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => {
+        return (
+          <IconButton
+            icon="star"
+            color="white"
+            onPress={headerButtonPressHandler}
+          />
 
-  //       );
-  //     },
-  //   });
-  // }, [navigation, headerButtonPressHandler]);
+        );
+      },
+    });
+  }, [navigation, headerButtonPressHandler]);
 
   return (
     <ScrollView style={styles.rootContainer}>
