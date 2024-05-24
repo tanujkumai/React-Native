@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import Input from "./input";
+import Input from "./Input"
 
 function ExpenseForm() {
   function amountChangeHandler() {}
