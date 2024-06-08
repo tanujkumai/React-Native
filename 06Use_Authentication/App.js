@@ -33,7 +33,7 @@ function AuthenticatedStack() {
     <Stack.Navigator
       screenOptions={{
         headerStyle: { backgroundColor: Colors.primary500 },
-        headerTintColor: "white",
+        headerTintColor: 'white',
         contentStyle: { backgroundColor: Colors.primary100 },
       }}
     >
@@ -41,14 +41,14 @@ function AuthenticatedStack() {
         name="Welcome"
         component={WelcomeScreen}
         options={{
-          headerRight: ({ tintColor }) => {
+          headerRight: ({ tintColor }) => (
             <IconButton
               icon="exit"
               color={tintColor}
               size={24}
               onPress={authCtx.logout}
-            />;
-          },
+            />
+          ),
         }}
       />
     </Stack.Navigator>
